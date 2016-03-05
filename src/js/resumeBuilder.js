@@ -73,7 +73,7 @@ MakingContact = function() {
 	var headings = ['mobile', 'email', 'github', 
 		'location', 'facebook'];
 
-	var contact = ['(908)433-0178', 'jackmasterson5@gmail.com', 'jmast35',
+	var contact = ['(908)433-0178', 'jackmasterson5@gmail.com', 'jackmasterson',
 		'Greater NYC', '/jack.masterson.560',];
 
 			$('#main').append(contactDiv);
