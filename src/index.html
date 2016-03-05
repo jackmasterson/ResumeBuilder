@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Resume</title>
+    <link href="css/style.css" rel="stylesheet">
+    
+
+
+    
+<script src="js/jQuery.js"></script>
+
+    
+    <meta name="viewport" content="width=device-width">
+
+
+
+</head>
+
+<body>
+    <div id="main"></div>
+
+            <div class="panel-group" id="accordion">
+                <div class="panel panel-default">
+                    <div id="workExperience" class="panel-heading">
+                        <h2>
+                      <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">Work Experience</a>
+                  </h2>
+                    </div>
+                    <div id="collapseOne" class="panel-collapse collapse in"></div>
+                </div>
+                <div class="panel panel-default">
+                    <div id="projects" class="panel-heading">
+                        <h2>
+                      <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">Projects</a>
+                  </h2>
+                    </div>
+                    <div id="collapseTwo" class="panel-collapse collapse">
+                        <div class="panel-body"></div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div id="improv" class="panel-heading">
+                        <h2>
+                      <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">Improv</a>
+                  </h2>
+                    </div>
+                    <div id="collapseThree" class="panel-collapse collapse">
+                        <div class="panel-body"></div>
+                    </div>
+                </div>
+            <div id="lets-connect" class="maroon">
+                <h2 class="orange center-text">Let's Connect</h2>
+                <ul id="footerContacts" class="flex-box">
+                </ul>
+            </div>
+
+        
+
+        <script type="text/javascript">
+
+            if (document.getElementsByTagName('h1').length === 0) {
+                document.getElementById('header').style.backgroundColor = 'black';
+            }
+            if (document.getElementsByClassName('work-entry').length === 0) {
+                document.getElementById('workExperience').style.backgroundColor = 'black';
+            }
+            if (document.getElementsByClassName('project-entry').length === 0) {
+                document.getElementById('projects').style.backgroundColor = 'black';
+            }
+            if (document.getElementsByClassName('education-entry').length === 0) {
+                document.getElementById('education').style.backgroundColor = 'black';
+            }
+            if (document.getElementsByClassName('flex-item').length === 0) {
+                document.getElementById('lets-connect').style.backgroundColor = 'black';
+            }
+            if (document.getElementById('map') === null) {
+                document.getElementById('map').style.backgroundColor = 'black';
+            }
+        </script>
+
+
+<script src="js/resumeBuilder.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" async>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" async>
+    </script>
+
+
+
+</body>
+
+
+
+</html>

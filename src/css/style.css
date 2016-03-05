@@ -1,0 +1,509 @@
+* {
+    list-style-type: none;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+
+}
+
+body,
+div,
+ul,
+li,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    padding: 0;
+    margin: 0;
+    font-family: "Roboto", sans-serif;
+}
+
+.clear-fix {
+    overflow: auto;
+}
+
+#skillsglance {
+    color: orange;
+}
+#skills {
+
+    color: white;
+
+}
+
+
+.education-entry,
+.work-entry,
+.project-entry {
+    padding: 0 5%;
+}
+
+h1 {
+    font-size: 40px;
+    color: gold;
+    line-height: 48px;
+    display: inline;
+}
+
+h2 {
+    font-weight: bold;
+    font-size: 24px;
+    color: gold;
+    line-height: 29px;
+    padding: 10px;
+}
+
+h3 {
+    font-style: italic;
+    font-size: 20px;
+    color: gold;
+    line-height: 22px;
+}
+
+h4 {
+    font-weight: bold;
+    font-size: 14px;
+    color: gold;
+    line-height: 17px;
+}
+
+h2,
+h3,
+h4,
+h5 {
+    padding: 10px 5%;
+}
+
+.date-text {
+    font-style: italic;
+    font-size: 14px;
+    color: maroon;
+    line-height: 16px;
+    float: left;
+}
+
+.location-text {
+    font-style: italic;
+    font-size: 14px;
+    color: maroon;
+    line-height: 16px;
+    float: right;
+    padding-right: 5px;
+}
+
+p {
+    font-size: 14px;
+    color: gray;
+    line-height: 21px;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+    margin-top: 10px;
+    display: block;
+}
+
+.welcome-message {
+    font-style: italic;
+    font-size: 18px;
+    color: black;
+    line-height: 28px;
+}
+
+#skillsh3 {
+    color: #f5ae23;
+    display: none;
+    margin-bottom: 0%;
+    padding-bottom: 0%;
+}
+
+#skills {
+    color: white;
+    font-size: 15px;
+    padding-left: 20px;
+    margin-left: 6%;
+    background-color: rgba(0,0,0,.7);
+    border-radius: 15px;
+
+}
+
+#hiddenskills {
+    display: none;
+}
+
+.orange {
+    background-color: #669966;
+}
+
+.orange-text {
+    color: gold;
+}
+
+.white-text {
+    font-weight: bold;
+    color: white;
+}
+
+.gray {
+    background-color: #f3f3f3;
+    padding-bottom: 10px;
+    clear: both;
+}
+
+.dark-gray {
+    background-color: gray;
+}
+
+.maroon {
+  background-image: url(..//images/beach.jpg);
+    background-position: center;
+    background-size: 100% 100%;;
+}
+
+#onlineh3 {
+  text-align: left;
+  padding-left: 0;
+  margin-left: 0;
+}
+
+#logoback {
+    background-image: url(..//images/logos.png);
+    height: 1024px;
+    max-width: 100%;
+
+}
+#main {
+    background-image: url(..//images/beach2.jpg);
+    background-position: center;
+    background-size: 100% 100%;
+    height: 824px;
+    max-width: 100%;
+}
+
+
+#liText {
+    font-size: 35px;
+    text-align: center;
+}
+#skillsText {
+    background-color: rgba(0,0,0,.4);
+    border-radius: 15px;
+    margin-top: 5px;
+}
+#header {
+    display: none;
+}
+#headDiv {
+    text-align: center;
+    display: inline;
+    size: 10px;
+
+}
+#pro {
+    display: inline-block;
+}
+
+.link {
+    size: 10px;
+    height: 50px;
+}
+
+#inline {
+    color: white;
+    border-radius: 15px;
+}
+.htpro {
+    display: none;
+
+}
+.htwarby {
+    display: none;
+}
+.htother {
+    display: none;
+}
+
+
+
+.head {
+    margin-left: 5%;
+    margin-right: 5%;
+    height: 250px;
+    width: 200px;
+    border-radius: 15px;
+
+}
+#inline {
+    display: inline-block;
+    margin: 5%;
+    text-align: center;
+}
+.link {
+    color: white;
+    background-color: rgba(0,0,0,.2);
+    border-radius: 15px;
+}
+
+
+#contact {
+    padding: 10px;
+    border-bottom: 3px solid white;
+    background-color: rgba(0,0,0,.5);
+}
+.flex-box {
+    display: -webkit-flex;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 10px;
+
+}
+
+.flex-item {
+    display: inline-block;
+    list-style-type: circle;
+    text-align: center;
+}
+
+.center-content {
+    padding: 2.5% 5%;
+}
+
+ul {
+    list-style-type: circle;
+}
+
+.biopic {
+    float: left;
+    padding: 10px;
+    width: 200px;
+    display: none;
+}
+
+img {
+    padding: 10px;
+    height: 150px;
+    width: 120px;
+}
+
+
+
+#lets-connect {
+    text-align: center;
+    list-style-type: none;
+}
+#footerContacts {
+    height: 50px;
+}
+
+#map {
+    display: block;
+    height: 100%;
+    margin-left: 7%;
+    margin-right: 7%;
+    height: 500px;
+    width: 80%;
+}
+
+#maph2 {
+    text-align: center;
+    color: black;
+}
+
+#mapDiv {
+    height: 400px;
+    width: 100%;
+    padding-bottom: 5%;
+    height: 500px;
+    width: 500px;
+}
+
+@media only screen and (min-width: 750px) {
+    #skillsh3,
+  .biopic {
+        display: block;
+    };
+}
+
+#welcome {
+    text-align: center;
+    font-size: 20px;
+    padding-top: 0;
+    margin-top: 0;
+    padding-bottom: 150px;
+    margin-bottom: 150px;
+    display: inline-block;
+}
+
+.bs-example {
+    margin: 20px;
+}
+
+#name {
+    color: orange;
+    margin-top: 50px;
+    display: inline;
+}
+
+#role {
+    color: white;
+}
+.workman {
+    display: none;
+}
+#PMG {
+    display: inline-block;
+    height: 37%;
+    width: 33%;
+}
+
+.center-content {
+    color: black;
+}
+
+#projectImage {
+    height: 350px;
+}
+
+#collapseThree {
+    font-size: 19px;
+    padding: 25px;
+}
+
+#bottompadding {
+    padding-bottom: 15px;
+}
+
+/* -----------------------Contact Info ------------------*/
+.main-content {
+    min-height: 330px;
+    background: #dbdfe5;
+}
+
+.sidebar-content {
+    min-height: 150px;
+    margin-bottom: 30px;
+    background: #b4bac0;
+}
+
+#emailcell {
+    font-size: 275%;
+    text-align: center;
+    padding-top: 19%;
+    list-style-type: none;
+}
+
+#mobilecell {
+    padding-top: 10%;
+    font-size: 150%;
+    text-align: right;
+}
+
+#facebookcell {
+    font-size: 130%;
+    padding-top: 49%;
+}
+
+    /*--------------Tabs---------------*/
+#college {
+    height: 500px;
+    background-size: 100% 200%;
+    padding: 5px;
+    margin-top: 50px;
+}
+
+#udacity {
+    height: 200px;
+    background-size: 100% 100%;
+    padding: 5px;
+}
+
+#squan {
+    height: 200px;
+    background-size: 100% 200%;
+    padding: 5px;
+}
+
+#squanid {
+    color: gold;
+}
+
+
+#headshotid {
+    height: 200px;
+    width: 150px;
+    display: none;
+}
+
+#lumberid {
+    height: 200px;
+    width: 150px;
+}
+
+#click, #click2 {
+    border-radius: 15px;
+}
+
+#contactuptop {
+    padding: 35px;
+    height: 100px;
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+
+#contactuptop li {
+    padding-left: 5%;
+    text-align: center;
+}
+
+#hiddenclick {
+    text-align: center;
+    height: 180px;
+    font-size: 80px;
+    padding-top: 25px;
+}
+
+#hiddenh3 {
+    font-size: 80px;
+}
+
+#iw-container .iw-title {
+    font-size: 45px;
+}
+
+/*-------------Blog Bar-----------------*/
+
+#blglink {
+    display: inline-block;
+
+}
+#blogDiv {
+    display: none;
+}
+
+#BlogButton {
+    color: orange;
+    background-color: black;
+    float: right;
+    margin-right: 10px;
+    border-radius: 15px;
+}
+#blgimg {
+    width: 100px;
+    height: 50px;
+    border-radius: 25px;
+    display: inline-block;
+
+}
+
+.improvIMGclass {
+    display: none;
+}
+
