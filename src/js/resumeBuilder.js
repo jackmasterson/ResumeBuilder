@@ -361,6 +361,15 @@ work.display();
 //JSON with my project info
 var projects = {
 	'projects': [{
+		'title': 'Wedding Landing Page',
+		'dates': 'November 15, 2015 - Dec 19, 2015',
+		'description': 'Created a landing page for a wedding for a client that happens to be my sister. ' +
+		'Includes a slideshow, Bootstrap features, jQuery, and any and all information ' +
+		'someone could want when attending a wedding in the area.',
+		'images': ['images/couple.png', 'images/grub.png', 'images/hotels.png'],
+		'imgWidth': [650],
+		'link': 'http://www.sarahandryantietheknot.com'
+	}, {
 		'title': 'Project 3 - Arcade Game Clone',
 		'dates': 'January 8, 2015 - February 7, 2016',
 		'description': 'According to the Udacity instructor who reviewed it,' +
@@ -388,6 +397,16 @@ var projects = {
 		'imgWidth': [650],
 		'link': 'https://github.com/jackmasterson/ResumeBuilder.git'
 	}, {
+		'title': 'Resume Template',
+		'dates': 'December 2015',
+		'description': 'Took some creative liberties and experimented with ' +
+		'a new resume template idea. Just really fooling around, but I included ' +
+		' a carousel for my work experience and tried out different layouts. It gets ' +
+		'the job done.',
+		'images': ['images/shell.png', 'images/work.png', 'images/hobbies.png'],
+		'imgWidth': [650],
+		'link': 'https://github.com/jackmasterson/Carmody.git'
+	},{
 		'title': 'Project 1 - Portfolio Site',
 		'dates': 'October 9, 2015 - October 24, 2015',
 		'description': 'Project Un for Udacity was a great challenge for' +
@@ -398,7 +417,7 @@ var projects = {
 		' I am a little proud of it.',
 		'images': ['images/ss5.png', 'images/ss4.png', 'images/ss3.png', 'images/ss6.png'],
 		'imgWidth': [410],
-		'link': 'https://github.com/jackmasterson/Carmody.git'
+		'link': '#/'
 	}, {
 		'title': 'Project 0 - About Me',
 		'dates': 'October 1, 2015-October 8, 2015',
