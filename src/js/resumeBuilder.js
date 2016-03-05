@@ -462,7 +462,10 @@ var improv = function() {
 	}
 
 
-	var improvTxt = ['</br><a href="#collapseThree" id="improvTOG">improv</a> Performed: Improv Boston, Manasquan High School, Local Community Centers; </br> Bars: Boston and NYC; </br> Not-for-profit, charity, and for-profit']
+	var improvTxt = ['</br><a href="#collapseThree" id="improvTOG">' +
+	'improv</a> Performed: Improv Boston, Manasquan High School, Local ' +
+	'Community Centers; </br> Bars: Boston and NYC; </br> Not-for-profit, ' +
+	'charity, and for-profit']
 
 	var formatImprovTxt = HTMLimprovTxt.replace('%data%', improvTxt[0]);
 
