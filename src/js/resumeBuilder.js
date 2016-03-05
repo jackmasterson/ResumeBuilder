@@ -22,14 +22,17 @@ var HTMLblogDiv = '<div id="blogDiv"><nav id="drawer""><ul id="blogUL"></ul></na
 var HTMLblogLI = '<li id="navLI"></li>';
 var HTMLblogLink = '<a href="%link%" target="_blank" id="blglink"><img id="blgimg" src="%pic%"></a>';
 
+//improv section
 var HTMLimprov = '<div id="improvDiv></div>';
 var HTMLimprovIMG = '<img class="improvIMGclass" src="%src%">';
 var HTMLimprovTxt = '<p id="improvTxt">%data%</p>'
 
+//skills section
 var HTMLskillsStart = '<h3 id="skillsh3">Skills at a Glance:</h3><ul class="flex-box"></ul>';
 var HTMLskillsReal = '<h3 id="skillsh3">Other Hobbies:</h3><ul class="flex-box"></ul>';
 var HTMLskills = '<li class="flex-item" id="skills"><span class="white-text">%data%</span></li>';
 
+//work section
 var HTMLworkStart = '<div class="work-entry"></div>';
 var HTMLworkEmployer = '<a target="_blank" href="#">%data%';
 var HTMLworkTitle = ' - %data%</a>';
@@ -37,12 +40,14 @@ var HTMLworkDates = '<div class="date-text">%data%</div>';
 var HTMLworkLocation = '<div class="location-text">%data%</div>';
 var HTMLworkDescription = '<p><br>%data%</p>';
 
+//projects
 var HTMLprojectStart = '<div class="project-entry"></div>';
 var HTMLprojectTitle = '<a href="#">%data%</a>';
 var HTMLprojectDates = '<div class="date-text">%data%</div>';
 var HTMLprojectDescription = '<p><br>%data%</p>';
 var HTMLprojectImage = '<img src="%data%" id="projectImage" style="width: Wpx">';
 
+//education
 var HTMLschoolStart = '<div class="education-entry"></div>';
 var HTMLschoolName = '<div id="%id%"><a href="#" target="_blank">%data%</a>';
 var HTMLschoolDegree = ' -- %data%';
@@ -52,22 +57,15 @@ var HTMLschoolMajor = '<em><br>Major: %data%</em></div>';
 var HTMLschoolHonors = '<span><br>%data%</span>';
 var HTMLschoolImage = '<img src="%data%" id="schoolImage" style="width: Wpx">';
 
-
-
-
+//online schooling
 var HTMLonlineTitle = '<div id="%id%"><h3 id="onlineh3">Online Classes</h3><a target="_blank" href="#">%data%';
 var HTMLonlineSchool = ' - %data%</a>';
 var HTMLonlineDates = '<div class="date-text">%data%</div>';
 var HTMLonlineURL = '<br><a href="#">%data%</a></div>';
 
-var internationalizeButton = '<button>Internatinolize</button>';
 
-var googleMap = "<div id='map'></div>";
-
-var maph2 = '<h2 id="maph2">Where I have Lived and Worked</h2>';
-
-
-
+//This establishes the above-the-fold contact section, including my name,
+//role, cell, email, etc
 MakingContact = function() {
 	
 	var headings = ['mobile', 'email', 'github', 
@@ -93,7 +91,8 @@ MakingContact = function() {
 
 MakingContact();
 
-
+//function to establish the three main sections you see when the page loads;
+//professional, academics, and extra help
 headShot = function() {
 
 	$('#main').append(headDiv);
@@ -105,7 +104,7 @@ headShot = function() {
 	var headTitle = ['Professionally', 'Academically', 
 		'Extra Help'];
 
-
+	//sets up the individual headshots with their information
 	headShotsfn = function() {
 
 		var len = headshot.length;
@@ -120,11 +119,7 @@ headShot = function() {
 		};
 	headShotsfn();
 
-
-	
-
-
-		
+		//skills used to populate the headshots
 		var skills = {
 			"professional" : ['Web Development', 'Copyediting/Copywriting', 'Blogging', 
 				'Marketing'],
@@ -133,23 +128,36 @@ headShot = function() {
 			'Dog Walking', 'Homework Help']
 		};
 
-		var Prolen = skills.professional.length;
+		//Professional Skills section
 		ProSkills = function() {
-			for(i=0;i<Prolen;i++) {
+			var len = skills.professional.length;
+			for(i=0;i<len;i++) {
 				var formatSkills = HTMLheadText
 					.replace('%data%', skills.professional[i])
 					.replace('%id%', headId[0]);
 					$('#pro').append(formatSkills);
 
 			}
+			//I feel like there is a better, more efficient way to do this, but can't
+			//think of it right now. It makes the logos of the three companies I've
+			//worked at pop up with my professional skills
+			var formatWorkman = HTMLpmg.replace('%data%', '..//images/workman.png')
+				.replace('%id%', 'workman');
+			var formatPMG = HTMLpmg.replace('%data%', '..//images/pmg.png')
+				.replace('%id%', 'workman');
+			var formatShawmut = HTMLpmg.replace('%data%', '..//images/sdc.png')
+				.replace('%id%', 'workman');
+			    $('#main').append(formatWorkman);
+			    $('#main').append(formatPMG);
+			    $('#main').append(formatShawmut);
 				
 		};
-
-
 		ProSkills();
-		var Paralen = skills.parapro.length;
+		
+		//'Paraprofessional' skills section, aka academics
 		ParaProSkills = function() {
-			for(i=0;i<Paralen;i++) {
+			var len = skills.parapro.length;
+			for(i=0;i<len;i++) {
 				var formatSkills = HTMLheadText
 					.replace('%data%', skills.parapro[i])
 					.replace('%id%', headId[1]);
@@ -159,9 +167,10 @@ headShot = function() {
 		};
 		ParaProSkills();
 
-		var Otherlen = skills.other.length;
+		//Other skills, ie tutoring, after school help, dog walking, etc
 		OtherSkills = function() {
-			for(i=0;i<Otherlen;i++) {
+			var len = skills.other.length;
+			for(i=0;i<len;i++) {
 				var formatSkills = HTMLheadText
 					.replace('%data%', skills.other[i])
 					.replace('%id%', headId[2]);
@@ -170,56 +179,48 @@ headShot = function() {
 				
 		};
 		OtherSkills();
+	//the following toggles each headshot section when another is clicked
+	toggleSections = function() {
+		$('#pro').click(function(){
+			if ($('#headDiv').css('visibility') == 'visible') {
+		        $('#warby').toggle(1000);
+		        $('#other').toggle(1000);
+		        $('.htpro').toggle(1000);
+		        $('.head').toggle(1000);
+		        $('.workman').toggle(2000);
+			    $('#main').css('background-image', 'url(..//images/beach2.jpg');
+		    }
 
+	    });
+		
+
+		$('#warby').click(function(){
+			if ($('#headDiv').css('visibility') == 'visible') {
+		        $('#pro').toggle(1000);
+		        $('.head').toggle(1000);
+		        $('#other').toggle(1000);
+		        $('.htwarby').toggle(1000);
+		        $('#main').css('background-image', 'url(..//images/bc2.jpg');
+
+
+
+		    }
+	    });
+		$('#other').click(function(){
+			if ($('#headDiv').css('visibility') == 'visible') {
+		        $('#pro').toggle(1000);
+		        $('.head').toggle(1000);
+		        $('#warby').toggle(1000);
+		        $('.htother').toggle(1000);
+		        $('#main').css('background-image', 'url(..//images/notepad.JPG');
+		        
+		    }
+	    });
+	};
+	toggleSections();
 };
 headShot();
-var formatWorkman = HTMLpmg.replace('%data%', '..//images/workman.png')
-	.replace('%id%', 'workman');
-var formatPMG = HTMLpmg.replace('%data%', '..//images/pmg.png')
-	.replace('%id%', 'workman');
-var formatShawmut = HTMLpmg.replace('%data%', '..//images/sdc.png')
-	.replace('%id%', 'workman');
-    $('#main').append(formatWorkman);
-    $('#main').append(formatPMG);
-    $('#main').append(formatShawmut);
 
-
-
-	$('#pro').click(function(){
-		if ($('#headDiv').css('visibility') == 'visible') {
-	        $('#warby').toggle(1000);
-	        $('#other').toggle(1000);
-	        $('.htpro').toggle(1000);
-	        $('.head').toggle(1000);
-	        $('.workman').toggle(2000);
-		    $('#main').css('background-image', 'url(..//images/beach2.jpg');
-	    }
-
-    });
-	
-
-	$('#warby').click(function(){
-		if ($('#headDiv').css('visibility') == 'visible') {
-	        $('#pro').toggle(1000);
-	        $('.head').toggle(1000);
-	        $('#other').toggle(1000);
-	        $('.htwarby').toggle(1000);
-	        $('#main').css('background-image', 'url(..//images/bc2.jpg');
-
-
-
-	    }
-    });
-	$('#other').click(function(){
-		if ($('#headDiv').css('visibility') == 'visible') {
-	        $('#pro').toggle(1000);
-	        $('.head').toggle(1000);
-	        $('#warby').toggle(1000);
-	        $('.htother').toggle(1000);
-	        $('#main').css('background-image', 'url(..//images/notepad.JPG');
-	        
-	    }
-    });
 
 
 var work = {
