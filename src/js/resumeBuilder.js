@@ -79,8 +79,9 @@ MakingContact = function() {
 			$('#main').append(contactDiv);
 			$('#contact').append(name);
 
+		var len = headings.length;
 
-			for(i=0; i<headings.length; i++) {
+			for(i=0; i<len; i++) {
 			var formattedContact = HTMLcontact
 				.replace('%contact%', headings[i])
 				.replace('%data%', contact[i]);
@@ -98,7 +99,7 @@ headShot = function() {
 	$('#main').append(headDiv);
 	
 	var headshot =['images/headshot.jpg', 'images/vale.jpg',
-		'images/improv.jpg'];
+		'images/dogwalk.jpg'];
 	var headId = ['pro', 'warby', 'other'];
 	var headId2 = ['"#pro"', '"#warby"', '"#other"'];
 	var headTitle = ['Professionally', 'Academically', 
@@ -107,7 +108,7 @@ headShot = function() {
 
 	headShotsfn = function() {
 
-		var len = headshot.length
+		var len = headshot.length;
 		for(i=0; i<len; i++) {
 			var formattedHead = HTMLheadshot
 				.replace('%data%', headshot[i])
@@ -125,16 +126,16 @@ headShot = function() {
 
 		
 		var skills = {
-			"professional" : ['Copyediting/Copywriting', 'Blogging', 
-				'PR', 'Marketing'],
+			"professional" : ['Web Development', 'Copyediting/Copywriting', 'Blogging', 
+				'Marketing'],
 			"parapro" : ['Boston College', 'Cum Laude', 'Major: English',],
 			"other" : ['Tutoring', 'Babysitting', 
 			'Dog Walking', 'Homework Help']
 		};
 
-
+		var Prolen = skills.professional.length;
 		ProSkills = function() {
-			for(i=0;i<skills.professional.length;i++) {
+			for(i=0;i<Prolen;i++) {
 				var formatSkills = HTMLheadText
 					.replace('%data%', skills.professional[i])
 					.replace('%id%', headId[0]);
@@ -146,9 +147,9 @@ headShot = function() {
 
 
 		ProSkills();
-
+		var Paralen = skills.parapro.length;
 		ParaProSkills = function() {
-			for(i=0;i<skills.parapro.length;i++) {
+			for(i=0;i<Paralen;i++) {
 				var formatSkills = HTMLheadText
 					.replace('%data%', skills.parapro[i])
 					.replace('%id%', headId[1]);
@@ -158,8 +159,9 @@ headShot = function() {
 		};
 		ParaProSkills();
 
+		var Otherlen = skills.other.length;
 		OtherSkills = function() {
-			for(i=0;i<skills.other.length;i++) {
+			for(i=0;i<Otherlen;i++) {
 				var formatSkills = HTMLheadText
 					.replace('%data%', skills.other[i])
 					.replace('%id%', headId[2]);
@@ -190,8 +192,7 @@ var formatShawmut = HTMLpmg.replace('%data%', '..//images/sdc.png')
 	        $('.htpro').toggle(1000);
 	        $('.head').toggle(1000);
 	        $('.workman').toggle(2000);
-	//        $('#main').css('background-image', 'url(..//logos.png');
-	//        $('#inline').css('margin-top', '150px');
+		    $('#main').css('background-image', 'url(..//images/beach2.jpg');
 	    }
 
     });
@@ -203,7 +204,7 @@ var formatShawmut = HTMLpmg.replace('%data%', '..//images/sdc.png')
 	        $('.head').toggle(1000);
 	        $('#other').toggle(1000);
 	        $('.htwarby').toggle(1000);
-	        $('#main').css('background-image', 'url(..//images/bc.jpg');
+	        $('#main').css('background-image', 'url(..//images/bc2.jpg');
 
 
 
@@ -215,6 +216,7 @@ var formatShawmut = HTMLpmg.replace('%data%', '..//images/sdc.png')
 	        $('.head').toggle(1000);
 	        $('#warby').toggle(1000);
 	        $('.htother').toggle(1000);
+	        $('#main').css('background-image', 'url(..//images/notepad.JPG');
 	        
 	    }
     });
@@ -310,12 +312,6 @@ work.display = function() {
 
 work.display();
 
-$(document).click(function(loc) {
-	var x = loc.pageX;
-	var y = loc.pageY;
-
-	logClicks(x,y);
-});
 
 
 
@@ -466,12 +462,7 @@ var improv = function() {
 	}
 
 
-	var improvTxt = ['</br><a href="#collapseThree" id="improvTOG">improv</a> I love improv. I have been performing since Senior year' +
-	' of high school. I was in a group throughout college that performed throughout' +
-	' Boston College campus and the city of Boston at large. I have been in shows at home' +
-	' at Manasquan High School for charity, and at the Manasquan Community Center just for fun.' + 
-	' Lately I have been helping to teach it to high schoolers in a class on Friday evenings. If you can make' +
-	' someone laugh, that to me is one of the most rewarding feelings ever.']
+	var improvTxt = ['</br><a href="#collapseThree" id="improvTOG">improv</a> Performed: Improv Boston, Manasquan High School, Local Community Centers; </br> Bars: Boston and NYC; </br> Not-for-profit, charity, and for-profit']
 
 	var formatImprovTxt = HTMLimprovTxt.replace('%data%', improvTxt[0]);
 

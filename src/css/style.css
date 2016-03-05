@@ -10,7 +10,7 @@
 body,
 div,
 ul,
-li,
+li, 
 p,
 h1,
 h2,
@@ -195,6 +195,7 @@ a {
     background-color: rgba(0,0,0,.4);
     border-radius: 15px;
     margin-top: 5px;
+
 }
 #header {
     display: none;
@@ -208,6 +209,9 @@ a {
 #pro {
     display: inline-block;
 }
+#pro:click {
+            margin-left: 60%;
+}
 
 .link {
     size: 10px;
@@ -217,6 +221,7 @@ a {
 #inline {
     color: white;
     border-radius: 15px;
+
 }
 .htpro {
     display: none;
@@ -357,6 +362,7 @@ img {
 }
 .workman {
     display: none;
+    margin-left: 40%;
 }
 #PMG {
     display: inline-block;
