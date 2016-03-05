@@ -42,7 +42,7 @@ var HTMLworkDescription = '<p><br>%data%</p>';
 
 //projects
 var HTMLprojectStart = '<div class="project-entry"></div>';
-var HTMLprojectTitle = '<a href="#">%data%</a>';
+var HTMLprojectTitle = '<a target="_blank" href="%link%">%data%</a>';
 var HTMLprojectDates = '<div class="date-text">%data%</div>';
 var HTMLprojectDescription = '<p><br>%data%</p>';
 var HTMLprojectImage = '<img src="%data%" id="projectImage" style="width: Wpx">';
@@ -221,8 +221,53 @@ headShot = function() {
 };
 headShot();
 
+//establishes the blog content/info
+Blogs = function() {
+	var blogInfo = [{
+		'name': 'Medium',
+		'url': 'https://medium.com/@jmast35',
+		'pic': 'images/medium1.png'
+	}, {
+		'name': 'Man of the Heights',
+		'url': 'http://manoftheheights.blogspot.com/',
+		'pic': 'images/heights1.png'
+	}, {
+		'name': 'Union Lane',
+		'url': 'http://unionlane.blogspot.com/',
+		'pic': 'images/unionlane1.png'
+	}, {
+		'name': 'Abroad in Moswetuset',
+		'url': 'http://jackisabroad.blogspot.com/',
+		'pic': 'images/abroad.png'
+	}, {
+		'name': 'Ill Write About It',
+		'url': 'http://illwriteaboutit.com',
+		'pic': 'images/writeaboutit.png'
+	}];
+	
+	//formats the blog section and button
+	BlogFormat = function() {
+		$('#contact').append(HTMLblogButton);
+		for(i=0;i<blogInfo.length;i++) {
+			var blogLink = HTMLblogLink.replace('%link%', blogInfo[i].url)
+				.replace('%pic%', blogInfo[i].pic);
+			$('#contact').append(HTMLblogDiv);
+			$('#blogUL').append(HTMLblogLI);
+			$('#navLI').append(blogLink);
+
+		}
+		$('#BlogButton').click(function(){
+	        $('#blogDiv').toggle(1000);
+	    });
+	};
+	
+};
+
+Blogs();
+BlogFormat();
 
 
+//JSON with all my work info
 var work = {
 	'jobs': [{
 		'employer': 'Workman Publishing',
@@ -282,31 +327,28 @@ var work = {
 	'display': 'work.display'
 };
 
-/*work.position = 'Life Mentor';
-work.employer = 'Cath and Tom Masterson';
-work.years= 25;
-work.city='Sea Girt, NJ';*/
-
+//displays all the work information how I want it
 work.display = function() {
-	for(var job in work.jobs) {
+	var jobs = work.jobs;
+	for(var job in jobs) {
 	$('#collapseOne').append(HTMLworkStart);
 
 	var formattedEmployer = HTMLworkEmployer.replace(
-		'%data%', work.jobs[job].employer).replace('#', 
-		work.jobs[job].url);
+		'%data%', jobs[job].employer).replace('#', 
+		jobs[job].url);
 	var formattedTitle = HTMLworkTitle.replace(
-		'%data%', work.jobs[job].title);
+		'%data%', jobs[job].title);
 	var formattedEmployerTitle = formattedEmployer + formattedTitle;
 
 	$('.work-entry:last').append(
 		formattedEmployerTitle);
 
 	var formattedDates = HTMLworkDates.replace('%data%',
-    	work.jobs[job].dates);
+    	jobs[job].dates);
   	$('.work-entry:last').append(formattedDates);
 
   	var formattedDescription = HTMLworkDescription
-  	.replace('%data%', work.jobs[job].description);
+  	.replace('%data%', jobs[job].description);
   	$('.work-entry:last').append(formattedDescription);
 	}
 };
@@ -316,7 +358,7 @@ work.display();
 
 
 
-
+//JSON with my project info
 var projects = {
 	'projects': [{
 		'title': 'Project 3 - Arcade Game Clone',
@@ -332,7 +374,8 @@ var projects = {
 		' get an extra life, and a way to pick your character (my favorite is Iron' +
 		' Man). Give it a try and let me know what you think!',
 		'images': ['images/Project3.png'],
-		'imgWidth': [650]
+		'imgWidth': [650],
+		'link': 'https://github.com/jackmasterson/Arcade-Game.git'
 	}, {
 		'title': 'Project 2 - Resume',
 		'dates': 'November 30, 2015 - Jan 3, 2016',
@@ -342,7 +385,8 @@ var projects = {
 		' I got the hang of it all again. Though I have to say, there is no more rewarding' +
 		' feeling than figuring out some code that has been eluding you for hours/months.',
 		'images': ['images/ss7.png'],
-		'imgWidth': [650]
+		'imgWidth': [650],
+		'link': 'https://github.com/jackmasterson/ResumeBuilder.git'
 	}, {
 		'title': 'Project 1 - Portfolio Site',
 		'dates': 'October 9, 2015 - October 24, 2015',
@@ -353,7 +397,8 @@ var projects = {
 		' it is not even all quite done, but for how far I came in such a short time,' + 
 		' I am a little proud of it.',
 		'images': ['images/ss5.png', 'images/ss4.png', 'images/ss3.png', 'images/ss6.png'],
-		'imgWidth': [410]
+		'imgWidth': [410],
+		'link': 'https://github.com/jackmasterson/Carmody.git'
 	}, {
 		'title': 'Project 0 - About Me',
 		'dates': 'October 1, 2015-October 8, 2015',
@@ -363,11 +408,13 @@ var projects = {
 		' little more time on it since it is pretty bare-bones. Whatever.',
 		'images':
 			['images/ss1.png', 'images/ss2.png'],
-		'imgWidth': [450]
+		'imgWidth': [450],
+		'link': '#/'
 	}],
 	'display': 'projects.display'
 };
 
+//sets up the projecst the way I want them displayed
 projects.display = function() {
 
 	for (var project in projects.projects) {
@@ -376,7 +423,7 @@ projects.display = function() {
 		$('#collapseTwo').append(HTMLprojectStart);
 
 		var formattedTitle = HTMLprojectTitle.replace('%data%', projects.
-			projects[project].title);
+			projects[project].title).replace('%link%', projects.projects[project].link);
 		$('.project-entry:last').append(formattedTitle);
 
 		var formattedDates = HTMLprojectDates.replace('%data%', projects.
@@ -402,49 +449,7 @@ projects.display();
 
 
 
-Blogs = function() {
-	var blogInfo = [{
-		'name': 'Medium',
-		'url': 'https://medium.com/@jmast35',
-		'pic': 'images/medium1.png'
-	}, {
-		'name': 'Man of the Heights',
-		'url': 'http://manoftheheights.blogspot.com/',
-		'pic': 'images/heights1.png'
-	}, {
-		'name': 'Union Lane',
-		'url': 'http://unionlane.blogspot.com/',
-		'pic': 'images/unionlane1.png'
-	}, {
-		'name': 'Abroad in Moswetuset',
-		'url': 'http://jackisabroad.blogspot.com/',
-		'pic': 'images/abroad.png'
-	}, {
-		'name': 'Ill Write About It',
-		'url': 'http://illwriteaboutit.com',
-		'pic': 'images/writeaboutit.png'
-	}];
-	
 
-	BlogFormat = function() {
-		$('#contact').append(HTMLblogButton);
-		for(i=0;i<blogInfo.length;i++) {
-			var blogLink = HTMLblogLink.replace('%link%', blogInfo[i].url)
-				.replace('%pic%', blogInfo[i].pic);
-			$('#contact').append(HTMLblogDiv);
-			$('#blogUL').append(HTMLblogLI);
-			$('#navLI').append(blogLink);
-
-		}
-		$('#BlogButton').click(function(){
-	        $('#blogDiv').toggle(1000);
-	    });
-	};
-	
-};
-
-Blogs();
-BlogFormat();
 
 var improv = function() {
 
