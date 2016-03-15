@@ -505,5 +505,3 @@ var improv = function() {
 improv();
 
 
-//added this to test my git commits
-

@@ -21,6 +21,10 @@ h6 {
     padding: 0;
     margin: 0;
     font-family: "Roboto", sans-serif;
+
+}
+body {
+    background: black;
 }
 
 .clear-fix {
@@ -179,6 +183,7 @@ a {
 
 }
 #main {
+    background: black;
     background-image: url(..//images/beach2.jpg);
     background-position: center;
     background-size: 100% 100%;
